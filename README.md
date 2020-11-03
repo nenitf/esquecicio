@@ -4,6 +4,22 @@
 
 Gerador de circuito de treino
 
+## Utilização
+
+1. Acesse a pasta do [executável](https://github.com/nenitf/esquecicio/releases) ou `cmd/main.go`
+2. Crie arquivo `exercicios.json` com base em *exercicios_????.json*
+3. Execute com `cmd.exe` ou `go run .`
+    - `.\cmd.exe -tipo=pull` ou `go run . -tipo=pushlegs`
+    - `.\cmd.exe -help` ou `go run . -hel`
+
+## Desenvolvimento
+
+### Testes
+
+```sh
+go test ./pkg/esquecicio/usecase
+```
+
 ## Referências
 
 - [Como Começar na Calistenia - Guia Prático](https://bookdown.org/kaiquegalois/guia_pratico/como-organizar-seus-treinos.html#intermedi%C3%A1rio---push-pull)
