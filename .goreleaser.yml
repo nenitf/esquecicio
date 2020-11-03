@@ -1,0 +1,15 @@
+archives:
+  - files:
+    - UNLICENSE
+    - README.md
+    - ./cmd/exercicios_*.json
+    format_overrides:
+    - goos: windows
+      format: zip
+builds:
+  - main: ./cmd/main.go
+    id: "cmd"
+    binary: calistenia
+    goos:
+      - linux
+      - windows
