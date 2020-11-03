@@ -10,7 +10,7 @@ Gerador de circuito de treino
 2. Crie arquivo `exercicios.json` com base em *exercicios_????.json*
 3. Execute com `cmd.exe` ou `go run .`
     - `.\cmd.exe -tipo=pull` ou `go run . -tipo=pushlegs`
-    - `.\cmd.exe -help` ou `go run . -hel`
+    - `.\cmd.exe -help` ou `go run . -help`
 
 ## Desenvolvimento
 
