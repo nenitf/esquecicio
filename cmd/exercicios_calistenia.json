@@ -1,0 +1,90 @@
+{
+    "pull": [
+		{
+			"nome":        "biceps curl",
+			"dificuldade": 2,
+			"grupo":       ["biceps"]
+		},
+		{
+			"nome":        "pull up arqueiro",
+			"dificuldade": 3,
+			"grupo":       ["biceps"]
+		},
+		{
+			"nome":        "pull up australiano",
+			"dificuldade": 3,
+			"grupo":       ["costas"]
+		},
+		{
+			"nome":        "chin up",
+			"dificuldade": 3,
+			"grupo":       ["costas", "biceps"]
+		},
+		{
+			"nome":        "pull up",
+			"dificuldade": 3,
+			"grupo":       ["costas"]
+        }
+    ],
+    "push": [
+		{
+			"nome":        "dips",
+			"dificuldade": 2,
+			"grupo":       ["triceps"]
+		},
+		{
+			"nome":        "push up",
+			"dificuldade": 2,
+			"grupo":       ["peito"]
+		},
+		{
+			"nome":        "push up inclinado",
+			"dificuldade": 2,
+			"grupo":       ["ombro"]
+		},
+		{
+			"nome":        "rotação ombro argolas",
+			"dificuldade": 2,
+			"grupo":       ["ombro"]
+		},
+		{
+			"nome":        "extensão triceps testa",
+			"dificuldade": 2,
+			"grupo":       ["triceps"]
+		},
+		{
+			"nome":        "extensão triceps sentado",
+			"dificuldade": 2,
+			"grupo":       ["triceps"]
+		}
+    ],
+    "legs": [
+		{
+			"nome":        "agachamento",
+			"dificuldade": 1,
+			"grupo":       ["perna"]
+		},
+		{
+			"nome":        "agachamento bulgaro",
+			"dificuldade": 3,
+			"grupo":       ["perna"]
+		},
+		{
+			"nome":        "extensão panturrilha",
+			"dificuldade": 1,
+			"grupo":       ["panturrilha"]
+		}
+    ],
+    "abs": [
+		{
+			"nome":        "montanha",
+			"dificuldade": 1,
+			"grupo":       ["abdomen"]
+		},
+		{
+			"nome":        "l sit",
+			"dificuldade": 1,
+			"grupo":       ["abdomen"]
+		}
+    ]
+}
