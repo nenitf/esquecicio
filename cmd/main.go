@@ -98,4 +98,5 @@ func main() {
 	for _, exercicio := range treino.Exercicios {
 		fmt.Println(exercicio.Nome)
 	}
+	fmt.Scanln()
 }
