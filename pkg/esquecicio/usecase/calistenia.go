@@ -10,7 +10,7 @@ import (
 )
 
 type TreinoCalisteniaDTO struct {
-	Tipo string
+	Tipos []string
 }
 
 type TreinoCalistenia struct {
@@ -27,36 +27,35 @@ func (s *TreinoCalistenia) Execute(dto TreinoCalisteniaDTO) (entity.Treino, erro
 	var treino entity.Treino
 	var exercicios []entity.Exercicio
 	var requisitos []string
-	switch dto.Tipo {
-	case "pull":
-		exercicios = s.repo.FindPull()
-		exercicios = append(exercicios, s.repo.FindAbs()...)
-		requisitos = []string{"costas", "biceps", "abdomen"}
-		break
-	case "push":
-		exercicios = s.repo.FindPush()
-		exercicios = append(exercicios, s.repo.FindAbs()...)
-		requisitos = []string{"ombro", "peito", "triceps", "abdomen"}
-		break
-	case "legs":
-		exercicios = s.repo.FindLegs()
-		exercicios = append(exercicios, s.repo.FindAbs()...)
-		requisitos = []string{"perna", "abdomen"}
-		break
-	case "pulllegs":
-		exercicios = s.repo.FindPull()
-		exercicios = append(exercicios, s.repo.FindLegs()...)
-		exercicios = append(exercicios, s.repo.FindAbs()...)
-		requisitos = []string{"costas", "biceps", "perna", "abdomen"}
-		break
-	case "pushlegs":
-		exercicios = s.repo.FindPush()
-		exercicios = append(exercicios, s.repo.FindLegs()...)
-		exercicios = append(exercicios, s.repo.FindAbs()...)
-		requisitos = []string{"ombro", "peito", "triceps", "perna", "abdomen"}
-		break
-	default:
-		return treino, errors.New("Escolha pull, push ou legs")
+	for _, tipo := range dto.Tipos {
+		switch tipo {
+		case "pull":
+			exercicios = append(exercicios, s.repo.FindPull()...)
+			requisitos = append(requisitos, "costas", "biceps")
+			break
+		case "push":
+			exercicios = append(exercicios, s.repo.FindPush()...)
+			requisitos = append(requisitos, "ombro", "peito", "triceps")
+			break
+		case "legs":
+			exercicios = append(exercicios, s.repo.FindAbs()...)
+			requisitos = append(requisitos, "abdomen")
+			break
+		case "abs":
+			exercicios = append(exercicios, s.repo.FindAbs()...)
+			requisitos = append(requisitos, "abdomen")
+			break
+		default:
+			return treino, errors.New("Escolha pull, push, legs e/ou abs")
+		}
+	}
+
+	if len(dto.Tipos) <= 0 {
+		return treino, errors.New("Escolha pull, push, legs e/ou abs")
+	}
+
+	if len(exercicios) <= 0 {
+		return treino, errors.New("Não foram encontrados exercicios")
 	}
 
 	for _, requisito := range requisitos {

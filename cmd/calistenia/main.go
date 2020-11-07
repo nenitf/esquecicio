@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"flag"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -12,31 +11,46 @@ import (
 	esquecicio "github.com/nenitf/esquecicio/pkg/esquecicio/usecase"
 )
 
-type Config struct {
+type Exercicios struct {
 	Pull []entity.Exercicio
 	Push []entity.Exercicio
 	Legs []entity.Exercicio
 	Abs  []entity.Exercicio
 }
 
+type Semana struct {
+	Segunda []string
+	Terca   []string
+	Quarta  []string
+	Quinta  []string
+	Sexta   []string
+	Sabado  []string
+	Domingo []string
+}
+
+type Config struct {
+	Exercicios Exercicios
+	Semana     Semana
+}
+
 type ExerciciosRepo struct {
-	config Config
+	Config Config
 }
 
 func (r ExerciciosRepo) FindPull() []entity.Exercicio {
-	return r.config.Pull
+	return r.Config.Exercicios.Pull
 }
 
 func (r ExerciciosRepo) FindPush() []entity.Exercicio {
-	return r.config.Push
+	return r.Config.Exercicios.Push
 }
 
 func (r ExerciciosRepo) FindLegs() []entity.Exercicio {
-	return r.config.Legs
+	return r.Config.Exercicios.Legs
 }
 
 func (r ExerciciosRepo) FindAbs() []entity.Exercicio {
-	return r.config.Abs
+	return r.Config.Exercicios.Abs
 }
 
 func main() {
@@ -53,41 +67,38 @@ func main() {
 	}
 
 	r := ExerciciosRepo{
-		config: config,
+		Config: config,
 	}
 	s := esquecicio.NewTreinoCalistenia(r)
 
-	var padrao string
+	var tipo []string
 
 	switch time.Now().Weekday() {
 	case time.Sunday:
-		padrao = "push"
+		tipo = config.Semana.Domingo
 		break
 	case time.Monday:
-		padrao = "pulllegs"
+		tipo = config.Semana.Segunda
 		break
 	case time.Tuesday:
-		padrao = "pushlegs"
+		tipo = config.Semana.Terca
 		break
 	case time.Wednesday:
-		padrao = "legs"
+		tipo = config.Semana.Quarta
 		break
 	case time.Thursday:
-		padrao = "pulllegs"
+		tipo = config.Semana.Quinta
 		break
 	case time.Friday:
-		padrao = "pushlegs"
+		tipo = config.Semana.Sexta
 		break
 	case time.Saturday:
-		padrao = "pull"
+		tipo = config.Semana.Sabado
 		break
 	}
 
-	flagTipo := flag.String("tipo", padrao, "pull, push ou legs")
-	flag.Parse()
-
 	dto := esquecicio.TreinoCalisteniaDTO{
-		Tipo: *flagTipo,
+		Tipos: tipo,
 	}
 
 	treino, err := s.Execute(dto)

@@ -41,7 +41,7 @@ func TestDeveTer3Exercicios(t *testing.T) {
 func TestDeveTerOmbroPeitoTricepsAbdomenEmPush(t *testing.T) {
 	sut := esquecicio.NewTreinoCalistenia(mock.ExerciciosRepoPadrao())
 	dto := esquecicio.TreinoCalisteniaDTO{
-		Tipo: "push",
+		Tipos: []string{"push", "abs"},
 	}
 
 	treino, err := sut.Execute(dto)
