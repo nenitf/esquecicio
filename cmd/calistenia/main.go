@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
-	"log"
 	"os"
 	"path/filepath"
 	"time"
@@ -55,6 +54,12 @@ func (r ExerciciosRepo) FindAbs() []entity.Exercicio {
 	return r.Config.Exercicios.Abs
 }
 
+func logFatal(message string) {
+	fmt.Println(message)
+	fmt.Scanln()
+	os.Exit(1)
+}
+
 func main() {
 	cwd, err := os.Getwd()
 	configfilename := "exercicios.json"
@@ -62,14 +67,14 @@ func main() {
 
 	data, err := ioutil.ReadFile(configpath)
 	if err != nil {
-		log.Fatal("Config não foi encontrado: ", err)
+		logFatal("Config não foi encontrado")
 	}
 
 	var config Config
 
 	err = json.Unmarshal(data, &config)
 	if err != nil {
-		log.Fatal("Config não foi parseado: ", err)
+		logFatal("Config não foi parseado")
 	}
 
 	r := ExerciciosRepo{
@@ -109,7 +114,7 @@ func main() {
 
 	treino, err := s.Execute(dto)
 	if err != nil {
-		log.Fatal("Treino não foi criado, erro: ", err)
+		logFatal("Treino não foi criado, erro: " + err.Error())
 	}
 
 	for _, exercicio := range treino.Exercicios {
