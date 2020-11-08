@@ -6,11 +6,9 @@ Gerador de circuito de treino
 
 ## Utilização
 
-1. Acesse a pasta do [executável](https://github.com/nenitf/esquecicio/releases) ou `cmd/main.go`
+1. Acesse a pasta do [executável](https://github.com/nenitf/esquecicio/releases) ou `cmd/calistenia/main.go`
 2. Crie arquivo `exercicios.json` com base em *exercicios_????.json*
-3. Execute com `cmd.exe` ou `go run .`
-    - `.\cmd.exe -tipo=pull` ou `go run . -tipo=pushlegs`
-    - `.\cmd.exe -help` ou `go run . -help`
+3. Execute binário ou `go run .`
 
 ## Desenvolvimento
 
