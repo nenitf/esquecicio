@@ -67,7 +67,7 @@ func main() {
 
 	data, err := ioutil.ReadFile(configpath)
 	if err != nil {
-		logFatal("Config não foi encontrado")
+		logFatal(configfilename + " não foi encontrado")
 	}
 
 	var config Config
