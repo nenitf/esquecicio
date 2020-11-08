@@ -2,12 +2,12 @@ archives:
   - files:
     - UNLICENSE
     - README.md
-    - ./cmd/exercicios_*.json
+    - ./cmd/calistenia/exercicios_*.json
     format_overrides:
     - goos: windows
       format: zip
 builds:
-  - main: ./cmd/main.go
+  - main: ./cmd/calistenia/main.go
     id: "cmd"
     binary: calistenia
     goos:
