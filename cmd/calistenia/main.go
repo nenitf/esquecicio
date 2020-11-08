@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"os"
 	"path/filepath"
-	"runtime"
 	"time"
 
 	"github.com/nenitf/esquecicio/pkg/esquecicio/entity"
@@ -56,8 +56,7 @@ func (r ExerciciosRepo) FindAbs() []entity.Exercicio {
 }
 
 func main() {
-	_, script, _, _ := runtime.Caller(0)
-	cwd := filepath.Dir(script)
+	cwd, err := os.Getwd()
 	configfilename := "exercicios.json"
 	configpath := filepath.FromSlash(cwd + "/" + configfilename)
 
