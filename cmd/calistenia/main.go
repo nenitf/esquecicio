@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"path/filepath"
+	"runtime"
 	"time"
 
 	"github.com/nenitf/esquecicio/pkg/esquecicio/entity"
@@ -54,7 +56,12 @@ func (r ExerciciosRepo) FindAbs() []entity.Exercicio {
 }
 
 func main() {
-	data, err := ioutil.ReadFile("exercicios.json")
+	_, script, _, _ := runtime.Caller(0)
+	cwd := filepath.Dir(script)
+	configfilename := "exercicios.json"
+	configpath := filepath.FromSlash(cwd + "/" + configfilename)
+
+	data, err := ioutil.ReadFile(configpath)
 	if err != nil {
 		log.Fatal("Config não foi encontrado: ", err)
 	}
