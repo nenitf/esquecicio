@@ -38,7 +38,7 @@ func (s *TreinoCalistenia) Execute(dto TreinoCalisteniaDTO) (entity.Treino, erro
 			requisitos = append(requisitos, "ombro", "peito", "triceps")
 			break
 		case "legs":
-			exercicios = append(exercicios, s.repo.FindAbs()...)
+			exercicios = append(exercicios, s.repo.FindLegs()...)
 			requisitos = append(requisitos, "abdomen")
 			break
 		case "abs":
