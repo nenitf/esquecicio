@@ -4,7 +4,7 @@
         "terca": ["pull", "abs"],
         "quarta": [],
         "quinta": ["push", "legs"],
-        "sexta": ["push", "abs"],
+        "sexta": ["pull", "abs"],
         "sabado": [],
         "domingo": []
     },
