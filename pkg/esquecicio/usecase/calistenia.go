@@ -39,7 +39,7 @@ func (s *TreinoCalistenia) Execute(dto TreinoCalisteniaDTO) (entity.Treino, erro
 			break
 		case "legs":
 			exercicios = append(exercicios, s.repo.FindLegs()...)
-			requisitos = append(requisitos, "abdomen")
+			requisitos = append(requisitos, "perna")
 			break
 		case "abs":
 			exercicios = append(exercicios, s.repo.FindAbs()...)
