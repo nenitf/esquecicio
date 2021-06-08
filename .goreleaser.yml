@@ -2,6 +2,7 @@ archives:
   - files:
     - UNLICENSE
     - README.md
+    - exercicios.json
     format_overrides:
     - goos: windows
       format: zip

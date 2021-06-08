@@ -1,16 +1,28 @@
 # Esquecicio
 
-[![emojicom](https://img.shields.io/badge/emojicom-%F0%9F%90%9B%20%F0%9F%86%95%20%F0%9F%92%AF%20%F0%9F%91%AE%20%F0%9F%86%98%20%F0%9F%92%A4-%23fff)](https://gist.github.com/nenitf/1cf5182bff009974bf436f978eea1996#emojicom)
+Gerador de circuito de treino com base na separação de exercícios em push ("ombros", "peito" e "tríceps"), pull ("bíceps" e "costas"), legs (pernas) e abs (abdômen)
 
-Gerador de circuito de treino
+> DISCLAIMER: Não possuo formação na área de saúde, portanto **NÃO** recomendo essa separação e muito menos os exercícios de exemplo do funcionamento da ferramenta. Consulte um profissional que entenda suas necessidades e limitações.
 
 ## Utilização
 
-1. Acesse a pasta do [executável](https://github.com/nenitf/esquecicio/releases) ou `cmd/calistenia/main.go`
-2. Crie arquivo `exercicios.json` com base em *exercicios_????.json*
-3. Execute binário ou `go run .`
+1. Baixe o [executável](https://github.com/nenitf/esquecicio/releases)
+2. Edite o arquivo `exercicios.json` com a configuração pretendida
+3. Execute o binário
+
+## Configuração
+
+- `semana`: tipos de treinos vão ser feitos em que dias da semana
+- `exercícios`: separação dos treinos (push, pull, legs, abs)
+    - Cada exercício possui `nome`, `dificuldade` e `grupo`
 
 ## Desenvolvimento
+
+### Run
+
+```sh
+go run ./cmd/main.go
+```
 
 ### Testes
 
