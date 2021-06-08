@@ -9,21 +9,21 @@ import (
 	"github.com/nenitf/esquecicio/pkg/esquecicio/entity"
 )
 
-type TreinoCalisteniaDTO struct {
+type TreinoDTO struct {
 	Tipos []string
 }
 
-type TreinoCalistenia struct {
+type Treino struct {
 	repo repository.Exercicios
 }
 
-func NewTreinoCalistenia(r repository.Exercicios) *TreinoCalistenia {
-	return &TreinoCalistenia{
+func NewTreino(r repository.Exercicios) *Treino {
+	return &Treino{
 		repo: r,
 	}
 }
 
-func (s *TreinoCalistenia) Execute(dto TreinoCalisteniaDTO) (entity.Treino, error) {
+func (s *Treino) Execute(dto TreinoDTO) (entity.Treino, error) {
 	var treino entity.Treino
 	var exercicios []entity.Exercicio
 	var requisitos []string

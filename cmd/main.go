@@ -80,7 +80,7 @@ func main() {
 	r := ExerciciosRepo{
 		Config: config,
 	}
-	s := esquecicio.NewTreinoCalistenia(r)
+	s := esquecicio.NewTreino(r)
 
 	var tipo []string
 
@@ -108,7 +108,7 @@ func main() {
 		break
 	}
 
-	dto := esquecicio.TreinoCalisteniaDTO{
+	dto := esquecicio.TreinoDTO{
 		Tipos: tipo,
 	}
 

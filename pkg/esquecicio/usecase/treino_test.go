@@ -10,7 +10,7 @@ import (
 
 /*
 func TestDeveTer3Exercicios(t *testing.T) {
-	sut := esquecicio.NewTreinoCalistenia(mock.ExerciciosRepoPadrao())
+	sut := esquecicio.NewTreino(mock.ExerciciosRepoPadrao())
 
 	var tests = []struct {
 		in string
@@ -20,7 +20,7 @@ func TestDeveTer3Exercicios(t *testing.T) {
 		{"legs"},
 	}
 	for _, test := range tests {
-		dto := esquecicio.TreinoCalisteniaDTO{
+		dto := esquecicio.Treino{
 			Tipo: test.in,
 		}
 
@@ -39,8 +39,8 @@ func TestDeveTer3Exercicios(t *testing.T) {
 */
 
 func TestDeveTerOmbroPeitoTricepsAbdomenEmPush(t *testing.T) {
-	sut := esquecicio.NewTreinoCalistenia(mock.ExerciciosRepoPadrao())
-	dto := esquecicio.TreinoCalisteniaDTO{
+	sut := esquecicio.NewTreino(mock.ExerciciosRepoPadrao())
+	dto := esquecicio.TreinoDTO{
 		Tipos: []string{"push", "abs"},
 	}
 
