@@ -6,6 +6,8 @@ Gerador de circuito de treino com base na separação de exercícios em push ("o
 
 ## Utilização
 
+![Utilização](demo.gif)
+
 1. Baixe o [executável](https://github.com/nenitf/esquecicio/releases)
 2. Edite o arquivo `exercicios.json` com a configuração pretendida
 3. Execute o binário
