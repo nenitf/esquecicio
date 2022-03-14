@@ -2,7 +2,7 @@
 
 Gerador de circuito de treino com base na separação de exercícios em push ("ombros", "peito" e "tríceps"), pull ("bíceps" e "costas"), legs (pernas) e abs (abdômen)
 
-> DISCLAIMER: Não possuo formação na área de saúde, portanto **NÃO** recomendo essa separação e muito menos os exercícios de exemplo do funcionamento da ferramenta. Consulte um profissional que entenda suas necessidades e limitações.
+> DISCLAIMER: Não possuo formação na área de saúde, portanto **NÃO** sou apto para recomendar essa separação de treino e muito menos os exercícios de exemplo da ferramenta. Consulte um profissional que entenda suas necessidades e objetivos.
 
 ## Utilização
 
